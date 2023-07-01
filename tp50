@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+float ConvertirPiesaYardas(float pies);
+float ConvertirPiesaPulgadas(float pies);
+float ConvertirPiesaCentimetros(float pies);
+float ConvertirPiesaMetros(float pies);
+
+int main() {
+    float pies;
+    cout << "Ingrese el número de pies: ";
+    cin >> pies;
+
+    float yardas = ConvertirPiesaYardas(pies);
+    float pulgadas = ConvertirPiesaPulgadas(pies);
+    float centimetros = ConvertirPiesaCentimetros(pies);
+    float metros = ConvertirPiesaMetros(pies);
+    
+    cout << "Yardas: " << yardas << endl;
+    cout << "Pies: " << pies << endl;
+    cout << "Pulgadas: " << pulgadas << endl;
+    cout << "Centímetros: " << centimetros << endl;
+    cout << "Metros: " << metros << endl; 
+    return 0;
+}
+
+float ConvertirPiesaYardas(float pies) {
+    return pies / 3.0;
+}
+
+float ConvertirPiesaPulgadas(float pies) {
+    return pies * 12.0;
+}
+
+float ConvertirPiesaCentimetros(float pies) {
+    return ConvertirPiesaPulgadas(pies) * 2.54;
+}
+
+float ConvertirPiesaMetros(float pies) {
+    return ConvertirPiesaCentimetros(pies) / 100.0;
+}
